@@ -15,21 +15,26 @@
 </head>
 
 <body>
-
-    <h2>Seleziona la Lavorazione</h2>
+        <!-- Select the lavoration -->
+   
     <div class="container-fluid font">
+        <h2>Seleziona la Lavorazione</h2>
         <button type="button" class="btn btn-primary" onclick="show_hide_hours_input()">Lavorazione Lenti</button>
         <button type="button" class="btn btn-primary">Lavorazione Ferro</button>
         <button type="button" class="btn btn-primary">Lavorazione Plastica</button>
         <!-- Display the line in which I write my hours -->
-        <div id="Hours_Input">
+        <!-- When you click Lavorazione Lenti -->
+        <br>
+        <br>
+        <div id="Hours_Input" class="font">
+            <h4 class="">Hai selezionato LAVORAZIONE LENTI</h4>
             <form>
                 <div class="form-group">
                   <br>
                   <input id="input_num" type="number" placeholder="Inserire ore di lavorazione">
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="sum_num1_plus_10()">Calcola Ore</button>
-                <p>Sum of numbers are <span></span></p>
+                <button type="submit" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
+                
               </form>
         </div>
     </div>
