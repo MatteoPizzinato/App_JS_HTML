@@ -36,6 +36,7 @@ function lavorazione_lenti(work_hours)
     var lavorazione_5 = 22;
     var lavorazione_6 = 15;
     var lavorazione_7 = 10;
+    // le mie sette variabili dove salvo i risultati relativi al calcolo della percentuale di ogni fase della lavorazione per le mie ore iniziali
     var result_1;
     var result_2;
     var result_3;
@@ -43,20 +44,16 @@ function lavorazione_lenti(work_hours)
     var result_5;
     var result_6;
     var result_7;
-    // adesso calcolo il risultato delle percentuali 
-    var result_1 = (work_hours * lavorazione_1) / 100;
-    var result_2 = (work_hours * lavorazione_1) / 100;
-    var result_3 = (work_hours * lavorazione_1) / 100;
-    var result_4 = (work_hours * lavorazione_1) / 100;
-    var result_5 = (work_hours * lavorazione_1) / 100;
-    var result_6 = (work_hours * lavorazione_1) / 100;
-    var result_7 = (work_hours * lavorazione_1) / 100;
-    // mostro i risultati 
-    alert(result_1);
+    // adesso calcolo il risultato delle percentuali e li mostro direttamente all'utente 
+    var result_1_ll = document.getElementById("result_1_ll").innerHTML = (work_hours * lavorazione_1) / 100;
+ /*   var result_2 = document.getElementById("result_1").innerHTML = (work_hours * lavorazione_2) / 100;
+    var result_3 = document.getElementById("result_1").innerHTML = (work_hours * lavorazione_3) / 100;
+    var result_4 = (work_hours * lavorazione_4) / 100;
+    var result_5 = (work_hours * lavorazione_5) / 100;
+    var result_6 = (work_hours * lavorazione_6) / 100;
+    var result_7 = (work_hours * lavorazione_7) / 100;
 
-
-
-
+*/
 
 
 
