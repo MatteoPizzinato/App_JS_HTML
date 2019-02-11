@@ -2,3 +2,11 @@
 .font{
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.setting_percentuali_button{
+	background-color: darkgoldenrod;
+	color: white;
+	border-radius: 2%;
+}
+.setting_percentuali_input_space{
+	
+}
