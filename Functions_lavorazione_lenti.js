@@ -50,8 +50,16 @@ function lavorazione_lenti()
     var result_6_ll = document.getElementById("result_6_ll").innerHTML = "Le ore relative alla sesta fase sono: " + (work_hours * lavorazione_6_ll) / 100 + " ore";
     var result_7_ll = document.getElementById("result_7_ll").innerHTML = "Le ore relative alla settima fase sono: " + (work_hours * lavorazione_7_ll) / 100 + " ore";
 };
-/* funzione che mi permette di visualizzare i valori di default e settare le percentuali e quindi le ore di ogni lavorazione in ogni singola
-   fase di cui è composta */
+/*  */
+function show_setting_values() // funzione che permette la comparsa, cliccando un pulsante di far comparire la casella nella 
+{                                // quale inserire il numero relativo alle ore di lavorazione
+    var x = document.getElementById("sh_s_v");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }   
+};
 function show_default_values()
 {
     // visualizzo i dati standard relativi alle fasi della lavorazione
@@ -73,8 +81,7 @@ function setting_percentuali(work_hours = parseInt(document.getElementById("inpu
     var new_lavorazione_1_ll = parseInt(document.getElementById("input_new_lavorazione_1_ll").value);
     var new_result_1_ll = (work_hours * new_lavorazione_1_ll) / 100;
     document.getElementById("new_lavorazione_1_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_ll + "%";
-    document.getElementById("new_result_1_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_ll + "%";
-    
+    document.getElementById("new_result_1_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_ll + " ore";
 };
 
 
