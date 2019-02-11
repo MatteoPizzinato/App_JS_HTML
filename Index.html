@@ -13,7 +13,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="My_Style.css">
     <!-- My JS -->
-    <script src="Functions.js"></script>
+    <script src="Functions_lavorazione_lenti.js"></script>
 </head>
 
 <body>
@@ -49,20 +49,19 @@
                     </div>
                     <div class="container-fluid">
                             <h4>Modificare le percentuali delle lavorazioni?</h4>
-                            <button type="button" class="btn btn-primary" onclick="setting_percentuali()">SI</button>
+                            <button type="button" class="btn btn-primary" onclick="show_default_values()">SI</button>
                             <button type="button" class="btn btn-primary">NO</button>
                             <div>
-                                <p id="lavorazione_1"></p> 
-                                <input type="number" placeholder="Inserire ore" class="setting_percentuali_input_space"><button type="button" class="btn setting_percentuali_button">Modifica</button></input>
+                                <p id="lavorazione_1_ll"></p> 
+                                    <input id="input_new_lavorazione_1_ll" type="number" placeholder="Inserire nuova %">
+                                        <button type="button" class="btn" onclick="setting_percentuali()">Modifica</button>
+                                        <p id="new_lavorazione_1_ll"></p>
+                                        <p id="new_result_1_ll"></p>
                             </div>
-                        </div>
+                    </div>
             </form>
         </div>
     </div>
 </body>
 
 </html>
-
-
-
-
