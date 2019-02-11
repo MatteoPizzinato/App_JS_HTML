@@ -50,7 +50,7 @@ function lavorazione_lenti()
     var result_6_ll = document.getElementById("result_6_ll").innerHTML = "Le ore relative alla sesta fase sono: " + (work_hours * lavorazione_6_ll) / 100 + " ore";
     var result_7_ll = document.getElementById("result_7_ll").innerHTML = "Le ore relative alla settima fase sono: " + (work_hours * lavorazione_7_ll) / 100 + " ore";
 };
-/*  */
+/* funzione che mostra i valori di default delle lavorazioni */
 function show_setting_values() // funzione che permette la comparsa, cliccando un pulsante di far comparire la casella nella 
 {                                // quale inserire il numero relativo alle ore di lavorazione
     var x = document.getElementById("sh_s_v");
@@ -83,7 +83,3 @@ function setting_percentuali(work_hours = parseInt(document.getElementById("inpu
     document.getElementById("new_lavorazione_1_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_ll + "%";
     document.getElementById("new_result_1_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_ll + " ore";
 };
-
-
-
- 
