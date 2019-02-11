@@ -4,6 +4,8 @@
     <title> favorites / bookmark title goes here </title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+     <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -17,7 +19,7 @@
 <body>
         <!-- Select the lavoration -->
    
-    <div class="container-fluid font">
+    <div class="container-fluid font ">
         <h2>Seleziona la Lavorazione</h2>
         <button type="button" class="btn btn-primary" onclick="show_hide_hours_input()">Lavorazione Lenti</button>
         <button type="button" class="btn btn-primary" >Lavorazione Ferro</button>
@@ -26,7 +28,7 @@
         <!-- When you click Lavorazione Lenti -->
         <br>
         <br>
-        <div id="Hours_Input" class="font">
+        <div id="Hours_Input" class="font" style="display: none">
             <h4 class="">Hai selezionato LAVORAZIONE LENTI</h4>
             <form>
                 <div class="form-group">
@@ -35,13 +37,15 @@
                 </div>
                     <div>
                         <button type="button" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
-                        <p>Le ore relative alla prima fase sono: </p> <h6 id="result_1_ll"></h6> 
-                        <p>Le ore relative alla seconda fase sono: </p> <h2 id="result_2_ll"></h2> 
-                        <p>Le ore relative alla terza fase sono: </p> <h2 id="result_3_ll"></h2> 
-                        <p>Le ore relative alla quarta fase sono: </p> <h2 id="result_4_ll"></h2>
-                        <p>Le ore relative alla quinta fase sono: </p> <h2 id="result_5_ll"></h2>
-                        <p>Le ore relative alla sesta fase sono: </p> <h2 id="result_6_ll"></h2>
-                        <p>Le ore relative alla settima fase sono: </p> <h2 id="result_7_ll"></h2> 
+                            <div onclick="show_hide_hours_input()">
+                                <p>Le ore relative alla prima fase sono: </p> <h6 id="result_1_ll"></h6> 
+                                <p>Le ore relative alla seconda fase sono: </p> <h2 id="result_2_ll"></h2> 
+                                <p>Le ore relative alla terza fase sono: </p> <h2 id="result_3_ll"></h2> 
+                                <p>Le ore relative alla quarta fase sono: </p> <h2 id="result_4_ll"></h2>
+                                <p>Le ore relative alla quinta fase sono: </p> <h2 id="result_5_ll"></h2>
+                                <p>Le ore relative alla sesta fase sono: </p> <h2 id="result_6_ll"></h2>
+                                <p>Le ore relative alla settima fase sono: </p> <h2 id="result_7_ll"></h2> 
+                            </div>
                     </div>
             </form>
         </div>
