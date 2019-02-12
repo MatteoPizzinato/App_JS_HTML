@@ -49,15 +49,27 @@
                         <p></p> <h6 id="result_7_ll"></h6> 
                     </div>
                 </div>
-                    <div class="container-fluid" onclick="show_default_values()">
+            <br>
+            <br>
+                    <div class="container-fluid" >
                         <h4>Modificare le percentuali delle lavorazioni?</h4>
-                            <div id="sh_s_v initial_display">
+                        <button type="button" class="btn" onclick="show_default_values()">Mostra Percentuali di default</button>    
+                        <div id="sh_s_v initial_display">
                                 <p id="lavorazione_1_ll"></p>
                                     <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
                                         <button type="button" onclick="setting_percentuali()">Modifica</button> 
                                     </input>
                                         <p id="new_lavorazione_1_ll"></p>
                                         <p id="new_result_1_ll"></p>
+                            </div>
+                            <div>
+                                <p id="lavorazione_2_ll"></p>
+                                <input id="input_new_lavorazione_2_ll" type="number" placeholder="NEW % per FASE 2">
+                                    <button type="button" onclick="setting_percentuali()">Modifica</button> 
+                                </input>
+                                <p id="new_lavorazione_2_ll"></p>
+                                <p id="new_result_2_ll"></p>
+
                             </div>
                     </div>
            
