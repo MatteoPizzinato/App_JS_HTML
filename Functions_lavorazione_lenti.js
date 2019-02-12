@@ -33,7 +33,7 @@ function show_hide_hours_input() // funzione che permette la comparsa, cliccando
 // funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
 function lavorazione_lenti()
 {
-    work_hours = parseInt(document.getElementById("input_num").value); // qui il mio input viene parsato in una variabile di tipo INT
+    work_hours = parseFloat(document.getElementById("input_num").value); // qui il mio input viene parsato in una variabile di tipo INT
 
     // adesso calcolo il risultato delle percentuali e le mostro direttamente all'utente 
     // in JS le varibili non servono esattamente, nel senso che per visualizzare in questo caso il risultato non serve avere una variabile e 
@@ -64,7 +64,7 @@ function show_default_values()
 {
     // visualizzo i dati standard relativi alle fasi della lavorazione
     // alert(lavorazione_1);
-    // lavorazione_1 = parseInt(document.getElementById("lavorazione_1").value);
+    // lavorazione_1 = parseFloat(document.getElementById("lavorazione_1").value);
     document.getElementById("lavorazione_1_ll").innerHTML = "La percentuale relativa alla prima fase e'  " + lavorazione_1_ll + "%";
 /*  document.getElementById("lavorazione_2_ll").innerHTML = "La percentuale relativa alla seconda fase e'  " + lavorazione_2_ll + "%";
     document.getElementById("lavorazione_3_ll").innerHTML = "La percentuale relativa alla terza fase e'  " + lavorazione_3_ll + "%";
@@ -75,11 +75,11 @@ function show_default_values()
 */
 };
 // adesso setto le percentuali di ogni fase della lavorazione
-function setting_percentuali(work_hours = parseInt(document.getElementById("input_num").value))  /* gli passo quello che avevo scritto nella 
+function setting_percentuali(work_hours = parseFloat(document.getElementById("input_num").value))  /* gli passo quello che avevo scritto nella 
                                                                                                     casella di input ore all'inizio */
 {
-    var new_lavorazione_1_ll = parseInt(document.getElementById("input_new_lavorazione_1_ll").value);
-    var new_result_1_ll = (work_hours * new_lavorazione_1_ll) / 100;
+    var new_lavorazione_1_ll = parseFloat(document.getElementById("input_new_lavorazione_1_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_1_ll = (work_hours * new_lavorazione_1_ll) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_1_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_ll + "%";
     document.getElementById("new_result_1_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_ll + " ore";
 };

@@ -28,6 +28,7 @@
         <!-- When you click Lavorazione Lenti -->
         <br>
         <br>
+    </div>
         <div id="Hours_Input" class="container-fluid font initial_display" >
             <h4 class="">Hai selezionato LAVORAZIONE LENTI</h4>
             <form>
@@ -35,49 +36,33 @@
                   <br>
                   <input id="input_num" type="number" placeholder="Inserire ore">
                 </div>
-                    <div class="container-fluid">
-                        <button type="button" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
-                            <div>
-                                <p> </p> <h6 id="result_1_ll"></h6> 
-                                <p></p> <h6 id="result_2_ll"></h6> 
-                                <p></p> <h6 id="result_3_ll"></h6> 
-                                <p></p> <h6 id="result_4_ll"></h6>
-                                <p></p> <h6 id="result_5_ll"></h6>
-                                <p></p> <h6 id="result_6_ll"></h6>
-                                <p></p> <h6 id="result_7_ll"></h6> 
-                            </div>
+            </form>
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
+                    <div>
+                        <p> </p> <h6 id="result_1_ll"></h6> 
+                        <p></p> <h6 id="result_2_ll"></h6> 
+                        <p></p> <h6 id="result_3_ll"></h6> 
+                        <p></p> <h6 id="result_4_ll"></h6>
+                        <p></p> <h6 id="result_5_ll"></h6>
+                        <p></p> <h6 id="result_6_ll"></h6>
+                        <p></p> <h6 id="result_7_ll"></h6> 
                     </div>
-                    <div class="container-fluid">
-                            <h4>Modificare le percentuali delle lavorazioni?</h4>
- 
- 
- 
- 
- 
- /*
-    ELIMINA I BUTTON E METTI UN DIV CON LE POSSIBILI OPZIONI DI MODIFICA, CASOMAI L'UTENTE LO IGNORERA', NON CHIEDERE SE VUOLE MODIFICARE 
-    ELIMINA I BUTTON E METTI UN DIV CON LE POSSIBILI OPZIONI DI MODIFICA, CASOMAI L'UTENTE LO IGNORERA', NON CHIEDERE SE VUOLE MODIFICARE 
-    ELIMINA I BUTTON E METTI UN DIV CON LE POSSIBILI OPZIONI DI MODIFICA, CASOMAI L'UTENTE LO IGNORERA', NON CHIEDERE SE VUOLE MODIFICARE 
- */                     
- 
- 
- 
- 
- 
- 
-                            <button type="button" class="btn btn-primary" onclick="show_default_values()">SI</button>
-                            <button type="button" class="btn btn-primary">NO</button>
+                </div>
+                    <div class="container-fluid" onclick="show_default_values()">
+                        <h4>Modificare le percentuali delle lavorazioni?</h4>
                             <div id="sh_s_v initial_display">
                                 <p id="lavorazione_1_ll"></p>
                                     <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
-                                        <button type="button" onclick="setting_percentuali()">Modifica</button> </input>
+                                        <button type="button" onclick="setting_percentuali()">Modifica</button> 
+                                    </input>
                                         <p id="new_lavorazione_1_ll"></p>
                                         <p id="new_result_1_ll"></p>
                             </div>
                     </div>
-            </form>
-        </div>
-    </div>
+           
+        
+    
 </body>
 
 </html>
