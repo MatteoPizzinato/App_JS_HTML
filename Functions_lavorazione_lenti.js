@@ -74,18 +74,61 @@ function show_default_values()
     document.getElementById("lavorazione_7_ll").innerHTML = "La percentuale relativa alla settima fase e'  " + lavorazione_7_ll + "%";
 
 };
-// adesso setto le percentuali di ogni fase della lavorazione
-function setting_percentuali(work_hours = parseFloat(document.getElementById("input_num").value))  /* gli passo quello che avevo scritto nella 
-                                                                                                    casella di input ore all'inizio */
+// adesso setto le percentuali di ogni fase della lavorazione, avrò 7 funzioni in totale, una per ogni fase della lavorazione
+// prima fase
+function setting_percentuali_1_fase(work_hours = parseFloat(document.getElementById("input_num").value))  /* gli passo quello che avevo scritto nella 
+                                                                                                             casella di input ore all'inizio */
 {
-// LAVORAZIONE 1
     var new_lavorazione_1_ll = parseFloat(document.getElementById("input_new_lavorazione_1_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
     var new_result_1_ll = (work_hours * new_lavorazione_1_ll) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_1_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_ll + "%";
     document.getElementById("new_result_1_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_ll + " ore";
-// LAVORAZIONE 2 
+};
+// seconda fase
+function setting_percentuali_2_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
     var new_lavorazione_2_ll = parseFloat(document.getElementById("input_new_lavorazione_2_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
     var new_result_2_ll = (work_hours * new_lavorazione_2_ll) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_2_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_2_ll + "%";
     document.getElementById("new_result_2_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_2_ll + " ore";
+};
+// terza fase
+function setting_percentuali_3_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_3_ll = parseFloat(document.getElementById("input_new_lavorazione_3_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_3_ll = (work_hours * new_lavorazione_3_ll) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_3_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_3_ll + "%";
+    document.getElementById("new_result_3_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_3_ll + " ore";
+};
+// quarta fase
+function setting_percentuali_4_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_4_ll = parseFloat(document.getElementById("input_new_lavorazione_4_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_4_ll = (work_hours * new_lavorazione_4_ll) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_4_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_4_ll + "%";
+    document.getElementById("new_result_4_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_4_ll + " ore";
+};
+// quinta fase
+function setting_percentuali_5_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_5_ll = parseFloat(document.getElementById("input_new_lavorazione_5_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_5_ll = (work_hours * new_lavorazione_5_ll) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_5_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_5_ll + "%";
+    document.getElementById("new_result_5_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_5_ll + " ore";
+};
+// sesta fase
+function setting_percentuali_6_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_6_ll = parseFloat(document.getElementById("input_new_lavorazione_6_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_6_ll = (work_hours * new_lavorazione_6_ll) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_6_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_6_ll + "%";
+    document.getElementById("new_result_6_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_6_ll + " ore";
+};
+// settima fase
+function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_7_ll = parseFloat(document.getElementById("input_new_lavorazione_7_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_7_ll = (work_hours * new_lavorazione_7_ll) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_7_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_7_ll + "%";
+    document.getElementById("new_result_7_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_7_ll + " ore";
 };
