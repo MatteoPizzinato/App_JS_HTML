@@ -21,11 +21,12 @@
 		//	excel.set( {sheet:0,value:"This is Sheet 1" } );
 		//	excel.addSheet("Sheet 2");
 
+			excel.set({sheet: 0,value:"This is the lavoration sheet"});
 			excel.addSheet({sheet: 0, value:"Sheet_config_operations"});
 
 			var lavorazioni_style=excel.addStyle({
 				border: "thin #333333, thin #333333, thin #333333, thin #333333",
-				font: "Verdana 12 #0000AA C",
+				font: "Verdana 5 #0000AA C",
 			});
 			
 			var evenRow=excel.addStyle ( { 																	// Style for even ROWS
@@ -65,10 +66,7 @@
 				excel.set(0,2,i,$JExcel.toExcelLocalTime(d));												// Store the previous random date as a NUMERIC (there is also $JExcel.toExcelUTCTime)
 				excel.set(0,3,i,$JExcel.toExcelLocalTime(d),dateStyle);										// Store the previous random date as a NUMERIC,  display using dateStyle format
 				excel.set(0,4,i,"Some other text");															// Some other text
-				}	
-			
-
-
+			}	
 
 			excel.set(0,1,undefined,30);																	// Set COLUMN 1 to 30 chars width
 			excel.set(0,3,undefined,30);																	// Set COLUMN 3 to 20 chars width
@@ -78,7 +76,7 @@
 			excel.set(0,3,3,undefined,excel.addStyle( {align:"R B"}));										// Align cell 3-3  to RIGHT-BOTTOM
 					
 		    excel.generate("Lavorazioni.xlsx");
-			
+
 		}
 	</script>
   </head>

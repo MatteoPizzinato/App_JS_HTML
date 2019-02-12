@@ -16,9 +16,9 @@
     <script src="Functions_lavorazione_lenti.js"></script>
 
     <!-- Excel creations library -->
-    <script type="text/javascript" src="jszip.js"></script>
-    <script type="text/javascript" src="FileSaver.js"></script>
-    <script type="text/javascript" src="myexcel.js"></script>
+    <script type="text/javascript" src="excell_JS_library/MyExcel-master/jszip.js"></script>
+    <script type="text/javascript" src="excell_JS_library/MyExcel-master/FileSaver.js"></script>
+    <script type="text/javascript" src="excell_JS_library/MyExcel-master/myexcel.js"></script>
 
 </head>
 
@@ -57,90 +57,81 @@
                 </div>
             <br>
             <br>
-                    <div class="container-fluid" >
-                        <h4>Modificare le percentuali delle lavorazioni?</h4>
-                        <button type="button" class="btn" onclick="show_default_values()">Mostra Percentuali di default</button>    
-                            <!-- fase di modifica n 1 -->
-                            <div id="sh_s_v initial_display">
-                                <p id="lavorazione_1_ll"></p>
-                                    <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
-                                        <button type="button" onclick="setting_percentuali_1_fase()">Modifica</button> 
-                                    </input>
-                                        <p id="new_lavorazione_1_ll"></p>
-                                        <p id="new_result_1_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 2 -->
-                            <div>
-                                <p id="lavorazione_2_ll"></p>
-                                <input id="input_new_lavorazione_2_ll" type="number" placeholder="NEW % per FASE 2">
-                                    <button type="button" onclick="setting_percentuali_2_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_2_ll"></p>
-                                <p id="new_result_2_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 3 -->
-                            <div>
-                                <p id="lavorazione_3_ll"></p>
-                                <input id="input_new_lavorazione_3_ll" type="number" placeholder="NEW % per FASE 3">
-                                    <button type="button" onclick="setting_percentuali_3_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_3_ll"></p>
-                                <p id="new_result_3_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 4 -->
-                            <div>
-                                <p id="lavorazione_4_ll"></p>
-                                <input id="input_new_lavorazione_4_ll" type="number" placeholder="NEW % per FASE 4">
-                                    <button type="button" onclick="setting_percentuali_4_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_4_ll"></p>
-                                <p id="new_result_4_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 5 -->
-                            <div>
-                                <p id="lavorazione_5_ll"></p>
-                                <input id="input_new_lavorazione_5_ll" type="number" placeholder="NEW % per FASE 5">
-                                    <button type="button" onclick="setting_percentuali_5_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_5_ll"></p>
-                                <p id="new_result_5_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 6 -->
-                            <div>
-                                <p id="lavorazione_6_ll"></p>
-                                <input id="input_new_lavorazione_6_ll" type="number" placeholder="NEW % per FASE 6">
-                                    <button type="button" onclick="setting_percentuali_6_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_6_ll"></p>
-                                <p id="new_result_6_ll"></p>
-                            </div>
-                            <br>
-                            <!-- fase di modifica n 7 -->
-                            <div>
-                                <p id="lavorazione_7_ll"></p>
-                                <input id="input_new_lavorazione_7_ll" type="number" placeholder="NEW % per FASE 7">
-                                    <button type="button" onclick="setting_percentuali_7_fase()">Modifica</button> 
-                                </input>
-                                <p id="new_lavorazione_7_ll"></p>
-                                <p id="new_result_7_ll"></p>
-                            </div>  
-                    </div>
+    <div class="container-fluid" >
+        <h4>Modificare le percentuali delle lavorazioni?</h4>
+        <button type="button" class="btn" onclick="show_default_values()">Mostra Percentuali di default</button>    
+            <!-- fase di modifica n 1 -->
+            <div id="sh_s_v initial_display">
+                <p id="lavorazione_1_ll"></p>
+                    <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
+                        <button type="button" onclick="setting_percentuali_1_fase()">Modifica</button> 
+                    </input>
+                        <p id="new_lavorazione_1_ll"></p>
+                        <p id="new_result_1_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 2 -->
+            <div>
+                <p id="lavorazione_2_ll"></p>
+                <input id="input_new_lavorazione_2_ll" type="number" placeholder="NEW % per FASE 2">
+                    <button type="button" onclick="setting_percentuali_2_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_2_ll"></p>
+                <p id="new_result_2_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 3 -->
+            <div>
+                <p id="lavorazione_3_ll"></p>
+                <input id="input_new_lavorazione_3_ll" type="number" placeholder="NEW % per FASE 3">
+                    <button type="button" onclick="setting_percentuali_3_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_3_ll"></p>
+                <p id="new_result_3_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 4 -->
+            <div>
+                <p id="lavorazione_4_ll"></p>
+                <input id="input_new_lavorazione_4_ll" type="number" placeholder="NEW % per FASE 4">
+                    <button type="button" onclick="setting_percentuali_4_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_4_ll"></p>
+                <p id="new_result_4_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 5 -->
+            <div>
+                <p id="lavorazione_5_ll"></p>
+                <input id="input_new_lavorazione_5_ll" type="number" placeholder="NEW % per FASE 5">
+                    <button type="button" onclick="setting_percentuali_5_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_5_ll"></p>
+                <p id="new_result_5_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 6 -->
+            <div>
+                <p id="lavorazione_6_ll"></p>
+                <input id="input_new_lavorazione_6_ll" type="number" placeholder="NEW % per FASE 6">
+                    <button type="button" onclick="setting_percentuali_6_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_6_ll"></p>
+                <p id="new_result_6_ll"></p>
+            </div>
+            <br>
+            <!-- fase di modifica n 7 -->
+            <div>
+                <p id="lavorazione_7_ll"></p>
+                <input id="input_new_lavorazione_7_ll" type="number" placeholder="NEW % per FASE 7">
+                    <button type="button" onclick="setting_percentuali_7_fase()">Modifica</button> 
+                </input>
+                <p id="new_lavorazione_7_ll"></p>
+                <p id="new_result_7_ll"></p>
+            </div>  
+        </div>
     <div>
-            /*
-
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            DA AGGIUNGERE LO SCRIPT CHE GENERA GLI EXCEL
-            
-            */            
+        <a href="#" onclick="go();">FACCIO UN CASINO</a>            
     </div>
 </body>
 
