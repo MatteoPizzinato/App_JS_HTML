@@ -211,7 +211,7 @@ var oddRow=excel.addStyle ({ 																	// Style for odd ROWS
 for (var i=1;i<50;i++) excel.set({row:i,style: i%2==0 ? lavorazioni_style: oddRow  });			// Set style for the first 50 rows
 excel.set({row:3,value: 30  });																	// We want ROW 3 to be EXTRA TALL
 
-var headers=["Lavorazioni","Percetuali","Percentuali Utente","ORE"];							// This array holds the HEADERS text
+var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE"];							// This array holds the HEADERS text
 var formatHeader=excel.addStyle ( { 															// Format for headers
         border: "none,none,none,thin #333333", 													// 		Border for header
         font: "Calibri 12 #0000AA B"}); 														// 		Font for headers
@@ -248,16 +248,17 @@ for (var i=1;i<15;i++){																			// we will fill the 15 rows
     excel.set(0,3,i,work_hours.toLocaleString());
 } */
 
-excel.set(0,2,"Some other text");															// Some other text
-excel.set(0,4,"Hello World");
-excel.set(0,1, lavorazione_1_ll);
-excel.set(0,1, lavorazione_2_ll);
-excel.set(0,1, lavorazione_3_ll);
-excel.set(0,1, lavorazione_4_ll);
-excel.set(0,1, lavorazione_5_ll);
-excel.set(0,1, lavorazione_6_ll);
-excel.set(0,1, lavorazione_7_ll);
-excel.set(0,3, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
+excel.set(0,2,i, "Some other text");	// la variabile i mi serve per forza per scrivere dentro le caselle	// Some other text
+excel.set(0,4,i, "Hello World");
+excel.set(0,1,2, lavorazione_1_ll);
+excel.set(0,1,3, lavorazione_2_ll);
+excel.set(0,1,4, lavorazione_3_ll);
+excel.set(0,1,5, lavorazione_4_ll);
+excel.set(0,1,6, lavorazione_5_ll);
+excel.set(0,1,7, lavorazione_6_ll);
+excel.set(0,1,i, lavorazione_7_ll);
+excel.set(0,3,i, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
+
 
 excel.set(0,0,"LAVORAZIONE LENTI");
 
