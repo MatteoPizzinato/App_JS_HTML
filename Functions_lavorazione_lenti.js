@@ -193,23 +193,17 @@ var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 excel.set({sheet: 0,value:"This is the lavoration sheet"});
 excel.addSheet({sheet: 0, value:"Sheet_config_operations"});
 
-var lavorazioni_style=excel.addStyle({
-    border: "thin #333333, thin #333333, thin #333333, thin #333333",
-    font: "Verdana 11 #0000AA C",
-});
 
-/*
 var evenRow=excel.addStyle ({ 																	// Style for even ROWS
     border: "none,none,none,thin #333333"});													// Borders are LEFT,RIGHT,TOP,BOTTOM. Check $JExcel.borderStyles for a list of valid border styles
-*/
+
 
 var oddRow=excel.addStyle ({ 																	// Style for odd ROWS
     fill: "#ECECEC" , 																			// Background color, plain #RRGGBB, there is a helper $JExcel.rgbToHex(r,g,b)
     border: "none,none,none,thin #333333"}); 
 
 
-for (var i=1;i<50;i++) excel.set({row:i,style: i%2==0 ? lavorazioni_style: oddRow  });			// Set style for the first 50 rows
-excel.set({row:3,value: 30  });																	// We want ROW 3 to be EXTRA TALL
+                            																	// We want ROW 3 to be EXTRA TALL
 
 var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE"];							// This array holds the HEADERS text
 var formatHeader=excel.addStyle ( { 															// Format for headers
@@ -220,8 +214,34 @@ for (var i=0;i<headers.length;i++){																// Loop all the haders
     excel.set(0,i,0,headers[i],formatHeader);													// Set CELL with header text, using header format
     excel.set(0,i,undefined,"auto");															// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
 }
-
 /*
+excel.set(0,2,i, "Some other text");	// la variabile i mi serve per forza per scrivere dentro le caselle	// Some other text
+excel.set(0,4,i, "Hello World");
+// adesso stampo la lavroazione con le varie fasi
+*/
+for (var i=1;i<15;i++){		 
+
+excel.set(0,0,i,"LAVORAZIONE LENTI");
+excel.set(1,1,i, "fase 1");
+excel.set(2,1,i, "fase 2");
+excel.set(3,1,i, "fase 3");
+excel.set(4,1,i, "fase 4");
+excel.set(5,1,i, "fase 5");
+excel.set(6,1,i, "fase 6");
+excel.set(7,1,i, "fase 7");
+// fine della stampa delle lavorazioni nelle varie fasi
+}
+
+ /*
+excel.set(0,1,2, lavorazione_1_ll);
+excel.set(0,1,3, lavorazione_2_ll);
+excel.set(0,1,4, lavorazione_3_ll);
+excel.set(0,1,5, lavorazione_4_ll);
+excel.set(0,1,6, lavorazione_5_ll);
+excel.set(0,1,7, lavorazione_6_ll);
+excel.set(0,1,i, lavorazione_7_ll);
+excel.set(0,3,i, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
+
 // Now let's write some data
 var initDate = new Date(2000, 0, 1);
 var endDate = new Date(2016, 0, 1);
@@ -246,21 +266,7 @@ for (var i=1;i<15;i++){																			// we will fill the 15 rows
     excel.set(0,1,i, lavorazione_6_ll);
     excel.set(0,1,i, lavorazione_7_ll);
     excel.set(0,3,i,work_hours.toLocaleString());
-} */
-
-excel.set(0,2,i, "Some other text");	// la variabile i mi serve per forza per scrivere dentro le caselle	// Some other text
-excel.set(0,4,i, "Hello World");
-excel.set(0,1,2, lavorazione_1_ll);
-excel.set(0,1,3, lavorazione_2_ll);
-excel.set(0,1,4, lavorazione_3_ll);
-excel.set(0,1,5, lavorazione_4_ll);
-excel.set(0,1,6, lavorazione_5_ll);
-excel.set(0,1,7, lavorazione_6_ll);
-excel.set(0,1,i, lavorazione_7_ll);
-excel.set(0,3,i, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
-
-
-excel.set(0,0,"LAVORAZIONE LENTI");
+}*/
 
 // excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue);
 // excel.set(0,2,lavorazione_1_ll);
