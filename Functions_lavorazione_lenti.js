@@ -174,12 +174,9 @@ function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementB
 
 
 
-
-
-function randomDate(start, end) {
-var d= new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-return d;
-}
+/*
+        FUNZIONE PER FARE IL FOGLIO EXCEL
+*/
 
 function go(){
 
@@ -201,10 +198,12 @@ var lavorazioni_style=excel.addStyle({
     font: "Verdana 11 #0000AA C",
 });
 
-var evenRow=excel.addStyle ( { 																	// Style for even ROWS
+/*
+var evenRow=excel.addStyle ({ 																	// Style for even ROWS
     border: "none,none,none,thin #333333"});													// Borders are LEFT,RIGHT,TOP,BOTTOM. Check $JExcel.borderStyles for a list of valid border styles
+*/
 
-var oddRow=excel.addStyle ( { 																	// Style for odd ROWS
+var oddRow=excel.addStyle ({ 																	// Style for odd ROWS
     fill: "#ECECEC" , 																			// Background color, plain #RRGGBB, there is a helper $JExcel.rgbToHex(r,g,b)
     border: "none,none,none,thin #333333"}); 
 
@@ -222,10 +221,9 @@ for (var i=0;i<headers.length;i++){																// Loop all the haders
     excel.set(0,i,undefined,"auto");															// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
 }
 
-
+/*
 // Now let's write some data
 var initDate = new Date(2000, 0, 1);
-var ciao = result_1_ll;
 var endDate = new Date(2016, 0, 1);
 var dateStyle = excel.addStyle ( { 																// Format for date cells
         align: "R",																				// 		aligned to the RIGHT
@@ -234,28 +232,47 @@ var dateStyle = excel.addStyle ( { 																// Format for date cells
 
 for (var i=1;i<15;i++){																			// we will fill the 15 rows
     excel.set(0,0,i,"This is line "+i);															// This column is a TEXT
-    var d=randomDate(initDate,endDate);															// Get a random date
-    excel.set(0,1,i,d.toLocaleString());														// Store the random date as STRING
-    excel.set(0,2,i,$JExcel.toExcelLocalTime(d));												// Store the previous random date as a NUMERIC (there is also $JExcel.toExcelUTCTime)
+
+//  excel.set(0,1,i,d.toLocaleString());														// Store the random date as STRING
+//  excel.set(0,2,i,$JExcel.toExcelLocalTime(d));												// Store the previous random date as a NUMERIC (there is also $JExcel.toExcelUTCTime)
                                                             									// Store the previous random date as a NUMERIC,  display using dateStyle format
-    excel.set(0,4,i,"Some other text");															// Some other text
-    excel.set(0,4,i,("result_1_ll".value));
-    excel.set(0,4,i, "Mi hai stampato");
+    excel.set(0,2,i,"Some other text");															// Some other text
+    excel.set(0,4,i,"Hello World");
+    excel.set(0,1,i, lavorazione_1_ll);
+    excel.set(0,1,i, lavorazione_2_ll);
+    excel.set(0,1,i, lavorazione_3_ll);
+    excel.set(0,1,i, lavorazione_4_ll);
+    excel.set(0,1,i, lavorazione_5_ll);
+    excel.set(0,1,i, lavorazione_6_ll);
+    excel.set(0,1,i, lavorazione_7_ll);
     excel.set(0,3,i,work_hours.toLocaleString());
-} 
-result_1_ll.toString();
-new_result_1_ll.toString();
-excel.set(0,6,("result_1_ll".value));
-excel.set(0,5,new_result_1_ll);
+} */
 
+excel.set(0,2,"Some other text");															// Some other text
+excel.set(0,4,"Hello World");
+excel.set(0,1, lavorazione_1_ll);
+excel.set(0,1, lavorazione_2_ll);
+excel.set(0,1, lavorazione_3_ll);
+excel.set(0,1, lavorazione_4_ll);
+excel.set(0,1, lavorazione_5_ll);
+excel.set(0,1, lavorazione_6_ll);
+excel.set(0,1, lavorazione_7_ll);
+excel.set(0,3, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
 
+excel.set(0,0,"LAVORAZIONE LENTI");
 
+// excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue);
+// excel.set(0,2,lavorazione_1_ll);
+
+/*
 excel.set(0,1,undefined,30);																	// Set COLUMN 1 to 30 chars width
 excel.set(0,3,undefined,30);																	// Set COLUMN 3 to 20 chars width
 excel.set(0,4,undefined,20, excel.addStyle( {align:"R"}));										// Align column 4 to the right
 excel.set(0,1,3,undefined,excel.addStyle( {align:"L T"}));										// Align cell 1-3  to LEFT-TOP
 excel.set(0,2,3,undefined,excel.addStyle( {align:"C C"}));										// Align cell 2-3  to CENTER-CENTER
 excel.set(0,3,3,undefined,excel.addStyle( {align:"R B"}));										// Align cell 3-3  to RIGHT-BOTTOM
-        
+*/
+
+
 excel.generate("Lavorazioni.xlsx");
 }
