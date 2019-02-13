@@ -3,7 +3,6 @@
 SEZIONE PER LE VARIABILI GLOBALI 
 */
 var work_hours; // la variabile che uso per prendere in input le mie ore macchina e salvarle 
-work_hours = parseFloat(document.getElementById("input_num").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
 
 /* VARIBILI CONTENUTE IN lavorazioni_lenti */
 /* Variabili relative alle fasi di lavorazione della funzione lavorazion_lenti */
@@ -34,6 +33,7 @@ function show_hide_hours_input() // funzione che permette la comparsa, cliccando
 // funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
 function lavorazione_lenti()
 {
+    work_hours = parseFloat(document.getElementById("input_num").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
 
     // adesso calcolo il risultato delle percentuali e le mostro direttamente all'utente 
     // in JS le varibili non servono esattamente, nel senso che per visualizzare in questo caso il risultato non serve avere una variabile e 
@@ -132,9 +132,7 @@ function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementB
     var new_result_7_ll = (work_hours * new_lavorazione_7_ll) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_7_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_7_ll + "%";
     document.getElementById("new_result_7_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_7_ll + " ore";
-    
 };
-
 
 
 
@@ -182,6 +180,11 @@ function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementB
 */
 
 function go(){
+
+
+work_hours = parseFloat(document.getElementById("input_num").value);
+var result_1_ll = (work_hours * lavorazione_1_ll) / 100;    
+
 
 var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 
@@ -248,7 +251,7 @@ for (var i=1;i<8;i++){ // for che stampa le righe
 // fine stampa percentuali
 
 // adesso stampo i dati delle ore 
-        excel.set(0,2,3, result_1_ll + "ore");
+        excel.set(0,2,3, result_1_ll + "ore"); // calcolo fuori dalla funzione
         excel.set(0,2,4, result_2_ll + "ore");
         excel.set(0,2,5, result_3_ll + "ore");
         excel.set(0,2,6, result_4_ll + "ore");
