@@ -219,17 +219,22 @@ excel.set(0,2,i, "Some other text");	// la variabile i mi serve per forza per sc
 excel.set(0,4,i, "Hello World");
 // adesso stampo la lavroazione con le varie fasi
 */
-for (var i=1;i<15;i++){		 
+// excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue);
+for (var i=1;i<8;i++){ // for che stampa le righe
+    for(var j = 0; j < 2; j ++){ // for che stampa le colonne
 
-excel.set(0,0,i,"LAVORAZIONE LENTI");
-excel.set(1,1,i, "fase 1");
-excel.set(2,1,i, "fase 2");
-excel.set(3,1,i, "fase 3");
-excel.set(4,1,i, "fase 4");
-excel.set(5,1,i, "fase 5");
-excel.set(6,1,i, "fase 6");
-excel.set(7,1,i, "fase 7");
+        excel.set(0,0,2,"LAVORAZIONE LENTI");
+        excel.set(0,0,3, "fase 1");
+        excel.set(0,0,4, "fase 2");
+        excel.set(0,0,5, "fase 3");
+        excel.set(0,0,6, "fase 4");
+        excel.set(0,0,7, "fase 5");
+        excel.set(0,0,8, "fase 6");
+        excel.set(0,0,9, "fase 7");
 // fine della stampa delle lavorazioni nelle varie fasi
+        excel.set(0,0,10, "     ");
+        excel.set(0,0,11, "fase 8 anche se non esiste");
+    }
 }
 
  /*
