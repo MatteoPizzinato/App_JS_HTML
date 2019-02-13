@@ -183,8 +183,13 @@ function go(){
 
 
 work_hours = parseFloat(document.getElementById("input_num").value);
-var result_1_ll = (work_hours * lavorazione_1_ll) / 100;    
-
+var result_1_ll = (work_hours * lavorazione_1_ll) / 100;
+var result_2_ll = (work_hours * lavorazione_2_ll) / 100;    
+var result_3_ll = (work_hours * lavorazione_3_ll) / 100;    
+var result_4_ll = (work_hours * lavorazione_4_ll) / 100;
+var result_5_ll = (work_hours * lavorazione_5_ll) / 100;
+var result_6_ll = (work_hours * lavorazione_6_ll) / 100;    
+var result_7_ll = (work_hours * lavorazione_7_ll) / 100;    
 
 var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 
@@ -251,13 +256,24 @@ for (var i=1;i<8;i++){ // for che stampa le righe
 // fine stampa percentuali
 
 // adesso stampo i dati delle ore 
-        excel.set(0,2,3, result_1_ll + "ore"); // calcolo fuori dalla funzione
-        excel.set(0,2,4, result_2_ll + "ore");
-        excel.set(0,2,5, result_3_ll + "ore");
-        excel.set(0,2,6, result_4_ll + "ore");
-        excel.set(0,2,7, result_5_ll + "ore");
-        excel.set(0,2,8, result_6_ll + "ore");
-        excel.set(0,2,9, result_7_ll + "ore");
+        excel.set(0,1,3, lavorazione_1_ll + "%");
+        excel.set(0,1,4, lavorazione_2_ll + "%");
+        excel.set(0,1,5, lavorazione_3_ll + "%");
+        excel.set(0,1,6, lavorazione_4_ll + "%");
+        excel.set(0,1,7, lavorazione_5_ll + "%");
+        excel.set(0,1,8, lavorazione_6_ll + "%");
+        excel.set(0,1,9, lavorazione_7_ll + "%");
+// fine stampa percentuali
+
+// adesso stampo i dati delle ore previste per ogni fase in base all'input iniziale dell'utente 
+        excel.set(0,3,3, result_1_ll + " ore"); // calcolo fuori dalla funzione
+        excel.set(0,3,4, result_2_ll + " ore");
+        excel.set(0,3,5, result_3_ll + " ore");
+        excel.set(0,3,6, result_4_ll + " ore");
+        excel.set(0,3,7, result_5_ll + " ore");
+        excel.set(0,3,8, result_6_ll + " ore");
+        excel.set(0,3,9, result_7_ll + " ore");
+// fine stampa dati delle ore previste per ogni fase in base all'input iniziale dell'utente
     }
 }
 excel.generate("Lavorazioni.xlsx");
