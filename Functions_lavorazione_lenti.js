@@ -3,6 +3,7 @@
 SEZIONE PER LE VARIABILI GLOBALI 
 */
 var work_hours; // la variabile che uso per prendere in input le mie ore macchina e salvarle 
+work_hours = parseFloat(document.getElementById("input_num").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
 
 /* VARIBILI CONTENUTE IN lavorazioni_lenti */
 /* Variabili relative alle fasi di lavorazione della funzione lavorazion_lenti */
@@ -14,6 +15,7 @@ var lavorazione_5_ll = 22;
 var lavorazione_6_ll = 15;
 var lavorazione_7_ll = 10;
 /* FINE VARIABILI CONTENUTE IN lavorazione_lenti */
+
 
 /*
 FINE SEZIONE PER LE VARIABILI GLOBALI
@@ -32,7 +34,6 @@ function show_hide_hours_input() // funzione che permette la comparsa, cliccando
 // funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
 function lavorazione_lenti()
 {
-    work_hours = parseFloat(document.getElementById("input_num").value); // qui il mio input viene parsato in una variabile di tipo INT
 
     // adesso calcolo il risultato delle percentuali e le mostro direttamente all'utente 
     // in JS le varibili non servono esattamente, nel senso che per visualizzare in questo caso il risultato non serve avere una variabile e 
@@ -49,6 +50,7 @@ function lavorazione_lenti()
     var result_6_ll = document.getElementById("result_6_ll").innerHTML = "Le ore relative alla sesta fase sono: " + (work_hours * lavorazione_6_ll) / 100 + " ore";
     var result_7_ll = document.getElementById("result_7_ll").innerHTML = "Le ore relative alla settima fase sono: " + (work_hours * lavorazione_7_ll) / 100 + " ore";
 };
+
 /* funzione che mostra i valori di default delle lavorazioni */
 function show_setting_values() // funzione che permette la comparsa, cliccando un pulsante di far comparire la casella nella 
 {                                // quale inserire il numero relativo alle ore di lavorazione
@@ -130,6 +132,7 @@ function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementB
     var new_result_7_ll = (work_hours * new_lavorazione_7_ll) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_7_ll").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_7_ll + "%";
     document.getElementById("new_result_7_ll").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_7_ll + " ore";
+    
 };
 
 
@@ -205,7 +208,7 @@ var oddRow=excel.addStyle ({ 																	// Style for odd ROWS
 
                             																	// We want ROW 3 to be EXTRA TALL
 
-var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE"];							// This array holds the HEADERS text
+var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE"];						// This array holds the HEADERS text
 var formatHeader=excel.addStyle ( { 															// Format for headers
         border: "none,none,none,thin #333333", 													// 		Border for header
         font: "Calibri 12 #0000AA B"}); 														// 		Font for headers
@@ -217,11 +220,11 @@ for (var i=0;i<headers.length;i++){																// Loop all the haders
 /*
 excel.set(0,2,i, "Some other text");	// la variabile i mi serve per forza per scrivere dentro le caselle	// Some other text
 excel.set(0,4,i, "Hello World");
-// adesso stampo la lavroazione con le varie fasi
+// adesso stampo la lavorazione con le varie fasi
 */
 // excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue);
 for (var i=1;i<8;i++){ // for che stampa le righe
-    for(var j = 0; j < 2; j ++){ // for che stampa le colonne
+    for(var j = 0; j < 4; j ++){ // for che stampa le colonne
 
         excel.set(0,0,2,"LAVORAZIONE LENTI");
         excel.set(0,0,3, "fase 1");
@@ -233,58 +236,26 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,0,9, "fase 7");
 // fine della stampa delle lavorazioni nelle varie fasi
         excel.set(0,0,10, "     ");
-        excel.set(0,0,11, "fase 8 anche se non esiste");
+
+// adesso stampo le percentuali di default
+        excel.set(0,1,3, lavorazione_1_ll + "%");
+        excel.set(0,1,4, lavorazione_2_ll + "%");
+        excel.set(0,1,5, lavorazione_3_ll + "%");
+        excel.set(0,1,6, lavorazione_4_ll + "%");
+        excel.set(0,1,7, lavorazione_5_ll + "%");
+        excel.set(0,1,8, lavorazione_6_ll + "%");
+        excel.set(0,1,9, lavorazione_7_ll + "%");
+// fine stampa percentuali
+
+// adesso stampo i dati delle ore 
+        excel.set(0,2,3, result_1_ll + "ore");
+        excel.set(0,2,4, result_2_ll + "ore");
+        excel.set(0,2,5, result_3_ll + "ore");
+        excel.set(0,2,6, result_4_ll + "ore");
+        excel.set(0,2,7, result_5_ll + "ore");
+        excel.set(0,2,8, result_6_ll + "ore");
+        excel.set(0,2,9, result_7_ll + "ore");
     }
 }
-
- /*
-excel.set(0,1,2, lavorazione_1_ll);
-excel.set(0,1,3, lavorazione_2_ll);
-excel.set(0,1,4, lavorazione_3_ll);
-excel.set(0,1,5, lavorazione_4_ll);
-excel.set(0,1,6, lavorazione_5_ll);
-excel.set(0,1,7, lavorazione_6_ll);
-excel.set(0,1,i, lavorazione_7_ll);
-excel.set(0,3,i, work_hours.toString()); // devo parsare da int a string per scrivere il dato in excel    
-
-// Now let's write some data
-var initDate = new Date(2000, 0, 1);
-var endDate = new Date(2016, 0, 1);
-var dateStyle = excel.addStyle ( { 																// Format for date cells
-        align: "R",																				// 		aligned to the RIGHT
-        format: "yyyy.mm.dd hh:mm:ss", 															// 		using DATE mask, Check $JExcel.formats for built-in formats or provide your own 
-        font: "#00AA00"}); 																		// 		in color green
-
-for (var i=1;i<15;i++){																			// we will fill the 15 rows
-    excel.set(0,0,i,"This is line "+i);															// This column is a TEXT
-
-//  excel.set(0,1,i,d.toLocaleString());														// Store the random date as STRING
-//  excel.set(0,2,i,$JExcel.toExcelLocalTime(d));												// Store the previous random date as a NUMERIC (there is also $JExcel.toExcelUTCTime)
-                                                            									// Store the previous random date as a NUMERIC,  display using dateStyle format
-    excel.set(0,2,i,"Some other text");															// Some other text
-    excel.set(0,4,i,"Hello World");
-    excel.set(0,1,i, lavorazione_1_ll);
-    excel.set(0,1,i, lavorazione_2_ll);
-    excel.set(0,1,i, lavorazione_3_ll);
-    excel.set(0,1,i, lavorazione_4_ll);
-    excel.set(0,1,i, lavorazione_5_ll);
-    excel.set(0,1,i, lavorazione_6_ll);
-    excel.set(0,1,i, lavorazione_7_ll);
-    excel.set(0,3,i,work_hours.toLocaleString());
-}*/
-
-// excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue);
-// excel.set(0,2,lavorazione_1_ll);
-
-/*
-excel.set(0,1,undefined,30);																	// Set COLUMN 1 to 30 chars width
-excel.set(0,3,undefined,30);																	// Set COLUMN 3 to 20 chars width
-excel.set(0,4,undefined,20, excel.addStyle( {align:"R"}));										// Align column 4 to the right
-excel.set(0,1,3,undefined,excel.addStyle( {align:"L T"}));										// Align cell 1-3  to LEFT-TOP
-excel.set(0,2,3,undefined,excel.addStyle( {align:"C C"}));										// Align cell 2-3  to CENTER-CENTER
-excel.set(0,3,3,undefined,excel.addStyle( {align:"R B"}));										// Align cell 3-3  to RIGHT-BOTTOM
-*/
-
-
 excel.generate("Lavorazioni.xlsx");
 }
