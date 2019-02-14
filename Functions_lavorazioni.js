@@ -144,8 +144,8 @@ SEZIONE PER LE VARIABILI GLOBALI
 */
 var work_hours_lf; // la variabile che uso per prendere in input le mie ore macchina e salvarle 
 
-/* VARIBILI CONTENUTE IN lavorazioni_lenti */
-/* Variabili relative alle fasi di lavorazione della funzione lavorazion_lenti */
+/* VARIBILI CONTENUTE IN lavorazioni_ferro */
+/* Variabili relative alle fasi di lavorazione della funzione lavorazion_ferro */
 var lavorazione_1_lf = 5;
 var lavorazione_2_lf = 7;
 var lavorazione_3_lf = 12;
@@ -153,7 +153,7 @@ var lavorazione_4_lf = 27;
 var lavorazione_5_lf = 29;
 var lavorazione_6_lf = 15;
 var lavorazione_7_lf = 5;
-/* FINE VARIABILI CONTENUTE IN lavorazione_lenti */
+/* FINE VARIABILI CONTENUTE IN lavorazione_ferro */
 
 
 /*
@@ -173,7 +173,7 @@ function show_hide_hours_input_lf() // funzione che permette la comparsa, clicca
 // funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
 function lavorazione_ferro()
 {
-    work_hours = parseFloat(document.getElementById("input_num").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
+    work_hours_lf = parseFloat(document.getElementById("input_num_lf").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
 
     // adesso calcolo il risultato delle percentuali e le mostro direttamente all'utente 
     // in JS le varibili non servono esattamente, nel senso che per visualizzare in questo caso il risultato non serve avere una variabile e 
