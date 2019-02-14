@@ -386,7 +386,7 @@ function go(){
     
                                                                                                     // We want ROW 3 to be EXTRA TALL
     
-    var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE STD", "ORE CONFIG"];		// This array holds the HEADERS text
+    var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE STD", "ORE CONFIG", "calendario"]; // This array holds the HEADERS text
     var formatHeader=excel.addStyle ( { 															// Format for headers
             border: "none,none,none,thin #333333", 													// 		Border for header
             font: "Calibri 12 #0000AA B"}); 														// 		Font for headers
@@ -397,8 +397,14 @@ function go(){
     }
    /* INIZIO DATI LAVORAZIONE LENTI */
     for (var i=1;i<8;i++){ // for che stampa le righe
-        for(var j = 0; j < 4; j ++){ // for che stampa le colonne
-    
+        for(var j = 0; j < 9; j ++){ // for che stampa le colonne
+            
+            /* Provo a stampare le date in sequenza  */
+
+            excel.set(0,5, date + 1);
+
+            /* Fine stampa le date in sequenza */
+
             excel.set(0,0,2,"LAVORAZIONE LENTI");
             excel.set(0,0,3, "fase 1");
             excel.set(0,0,4, "fase 2");
