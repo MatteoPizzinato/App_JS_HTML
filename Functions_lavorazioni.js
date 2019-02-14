@@ -13,8 +13,7 @@ var lavorazione_4_ll = 37;
 var lavorazione_5_ll = 22;
 var lavorazione_6_ll = 15;
 var lavorazione_7_ll = 10;
-/* FINE VARIABILI CONTENUTE IN lavorazione_lenti */
-
+/* FINE VARIABILI CONTENUTE IN lavorazione_ferro */
 
 /*
 FINE SEZIONE PER LE VARIABILI GLOBALI
@@ -205,8 +204,6 @@ function show_setting_values_lf() // funzione che permette la comparsa, cliccand
 function show_default_values_lf()
 {
     // visualizzo i dati standard relativi alle fasi della lavorazione
-    // alert(lavorazione_1);
-    // lavorazione_1 = parseFloat(document.getElementById("lavorazione_1").value);
     document.getElementById("lavorazione_1_lf").innerHTML = "La percentuale relativa alla prima fase e'  " + lavorazione_1_lf + "%";
     document.getElementById("lavorazione_2_lf").innerHTML = "La percentuale relativa alla seconda fase e'  " + lavorazione_2_lf + "%";
     document.getElementById("lavorazione_3_lf").innerHTML = "La percentuale relativa alla terza fase e'  " + lavorazione_3_lf + "%";
@@ -219,10 +216,10 @@ function show_default_values_lf()
 // adesso setto le percentuali di ogni fase della lavorazione, avrò 7 funzioni in totale, una per ogni fase della lavorazione
 // prima fase
 function setting_percentuali_1_fase_lf(work_hours_lf = parseFloat(document.getElementById("input_num_lf").value))  /* gli passo quello che avevo scritto nella 
-                                                                                                             casella di input ore all'inizio */
+                                                                                                                      casella di input ore all'inizio */
 {
     var new_lavorazione_1_lf = parseFloat(document.getElementById("input_new_lavorazione_1_lf").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
-    var new_result_1_lf = (work_hours * new_lavorazione_1_lf) / 100; // creo una variabile per il nuovo risultato
+    var new_result_1_lf = (work_hours_lf * new_lavorazione_1_lf) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_1_lf").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_lf + "%";
     document.getElementById("new_result_1_lf").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_lf + " ore";
 };
@@ -246,7 +243,7 @@ function setting_percentuali_3_fase_lf(work_hours_lf = parseFloat(document.getEl
 function setting_percentuali_4_fase_lf(work_hours_lf = parseFloat(document.getElementById("input_num").value))
 {
     var new_lavorazione_4_lf = parseFloat(document.getElementById("input_new_lavorazione_4_lf").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
-    var new_result_4_lf = (work_hours * new_lavorazione_4_lf) / 100; // creo una variabile per il nuovo risultato
+    var new_result_4_lf = (work_hours_lf * new_lavorazione_4_lf) / 100; // creo una variabile per il nuovo risultato
     document.getElementById("new_lavorazione_4_lf").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_4_lf + "%";
     document.getElementById("new_result_4_lf").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_4_lf + " ore";
 };
@@ -322,12 +319,17 @@ function go(){
     var new_lavorazione_7_ll = parseFloat(document.getElementById("input_new_lavorazione_7_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
     var new_result_7_ll = (work_hours_ll * new_lavorazione_7_ll) / 100; // creo una variabile per il nuovo risultato
     /* FINE NUOVA LAVORAZIONE 7 */
-      
+      /**
+       * 
+       * 
+       *
+       * 
+       **/
     /* INIZIO DATI PER LAVORAZIONE FERRO */
 
     /* Variabili che mi servono per calcolare e stampare i dati che mi servono */ 
     /* PRIMI RISULTATI E WORK HOURS PER LAVORAZIONE FERRO */
-    work_hours_lf = parseFloat(document.getElementById("input_num").value);
+    work_hours_lf = parseFloat(document.getElementById("input_num_lf").value);
     var result_1_lf = (work_hours_lf * lavorazione_1_lf) / 100;
     var result_2_lf = (work_hours_lf * lavorazione_2_lf) / 100;    
     var result_3_lf = (work_hours_lf * lavorazione_3_lf) / 100;    
