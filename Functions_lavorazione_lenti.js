@@ -219,7 +219,7 @@ var oddRow=excel.addStyle ({ 																	// Style for odd ROWS
 
                             																	// We want ROW 3 to be EXTRA TALL
 
-var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE"];						// This array holds the HEADERS text
+var headers=["Lavorazioni","Percetuali Std","Percentuali Utente","ORE STD", "ORE CONFIG"];		// This array holds the HEADERS text
 var formatHeader=excel.addStyle ( { 															// Format for headers
         border: "none,none,none,thin #333333", 													// 		Border for header
         font: "Calibri 12 #0000AA B"}); 														// 		Font for headers
@@ -257,17 +257,7 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,1,8, lavorazione_6_ll + "%");
         excel.set(0,1,9, lavorazione_7_ll + "%");
 // fine stampa percentuali
-/*
-// adesso stampo i dati delle ore 
-        excel.set(0,1,3, lavorazione_1_ll + "%");
-        excel.set(0,1,4, lavorazione_2_ll + "%");
-        excel.set(0,1,5, lavorazione_3_ll + "%");
-        excel.set(0,1,6, lavorazione_4_ll + "%");
-        excel.set(0,1,7, lavorazione_5_ll + "%");
-        excel.set(0,1,8, lavorazione_6_ll + "%");
-        excel.set(0,1,9, lavorazione_7_ll + "%");
-// fine stampa percentuali
-*/
+
 // stampa delle percentuali immesse dall'utente 
         excel.set(0,2,3, new_lavorazione_1_ll + " %"); // calcolo fuori dalla funzione
         excel.set(0,2,4, new_lavorazione_2_ll + " %");
@@ -297,11 +287,6 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,4,8, new_result_6_ll + " ore");
         excel.set(0,4,9, new_result_7_ll + " ore");
 // fine stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente
-
-
-
-
-
 
     }
 }
