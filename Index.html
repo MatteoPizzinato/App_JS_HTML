@@ -13,8 +13,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="My_Style.css">
     <!-- My JS -->
-    <script src="Functions_lavorazione_lenti.js"></script>
-
+    <script src="Functions_lavorazioni.js"></script>
     <!-- Excel creations library -->
     <script type="text/javascript" src="excell_JS_library/MyExcel-master/jszip.js"></script>
     <script type="text/javascript" src="excell_JS_library/MyExcel-master/FileSaver.js"></script>
@@ -28,110 +27,210 @@
     <div class="container-fluid font ">
         <h2>Seleziona la Lavorazione</h2>
         <button type="button" class="btn btn-primary" onclick="show_hide_hours_input()">Lavorazione Lenti</button>
-        <button type="button" class="btn btn-primary" >Lavorazione Ferro</button>
+        <button type="button" class="btn btn-primary" onclick="show_hide_hours_input_lf()">Lavorazione Ferro</button>
         <button type="button" class="btn btn-primary">Lavorazione Plastica</button>
         <!-- Display the line in which I write my hours -->
         <!-- When you click Lavorazione Lenti -->
         <br>
         <br>
     </div>
-        <div id="Hours_Input" class="container-fluid font initial_display" >
-            <h4 class="">Hai selezionato LAVORAZIONE LENTI</h4>
-            <form>
-                <div class="form-group">
-                  <br>
-                  <input id="input_num" type="number" placeholder="Inserire ore">
+    <div id="Hours_Input_ll" class="container-fluid font initial_display" >
+        <h4 class="">Hai selezionato LAVORAZIONE LENTI</h4>
+        <form>
+            <div class="form-group">
+              <br>
+              <input id="input_num" type="number" placeholder="Inserire ore">
+            </div>
+        </form>
+            <div class="container-fluid">
+                <button type="button" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
+                <div>
+                    <p></p> <h6 id="result_1_ll"></h6> 
+                    <p></p> <h6 id="result_2_ll"></h6> 
+                    <p></p> <h6 id="result_3_ll"></h6> 
+                    <p></p> <h6 id="result_4_ll"></h6>
+                    <p></p> <h6 id="result_5_ll"></h6>
+                    <p></p> <h6 id="result_6_ll"></h6>
+                    <p></p> <h6 id="result_7_ll"></h6> 
                 </div>
-            </form>
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-primary" onclick="lavorazione_lenti()">Calcola Ore</button>
-                    <div>
-                        <p> </p> <h6 id="result_1_ll"></h6> 
-                        <p></p> <h6 id="result_2_ll"></h6> 
-                        <p></p> <h6 id="result_3_ll"></h6> 
-                        <p></p> <h6 id="result_4_ll"></h6>
-                        <p></p> <h6 id="result_5_ll"></h6>
-                        <p></p> <h6 id="result_6_ll"></h6>
-                        <p></p> <h6 id="result_7_ll"></h6> 
-                    </div>
-                </div>
-            <br>
-            <br>
-    <div class="container-fluid" >
-        <h4>Modificare le percentuali delle lavorazioni?</h4>
-        <button type="button" class="btn" onclick="show_default_values()">Mostra Percentuali di default</button>    
-            <!-- fase di modifica n 1 -->
-            <div id="sh_s_v initial_display">
-                <p id="lavorazione_1_ll"></p>
-                    <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
-                        <button type="button" onclick="setting_percentuali_1_fase()">Modifica</button> 
-                    </input>
-                        <p id="new_lavorazione_1_ll"></p>
-                        <p id="new_result_1_ll"></p>
             </div>
-            <br>
-            <!-- fase di modifica n 2 -->
-            <div>
-                <p id="lavorazione_2_ll"></p>
-                <input id="input_new_lavorazione_2_ll" type="number" placeholder="NEW % per FASE 2">
-                    <button type="button" onclick="setting_percentuali_2_fase()">Modifica</button> 
+        <br>
+        <br>
+         <!-- INZIO HTML LAVORAZIONE LENTI -->
+<div class="container-fluid" >
+    <h4>Modificare le percentuali delle lavorazioni?</h4>
+    <button type="button" class="btn" onclick="show_default_values()">Mostra Percentuali di default</button>    
+        <!-- fase di modifica n 1 -->
+        <div id="sh_s_v initial_display">
+            <p id="lavorazione_1_ll"></p>
+                <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
+                    <button type="button" onclick="setting_percentuali_1_fase()">Modifica</button> 
                 </input>
-                <p id="new_lavorazione_2_ll"></p>
-                <p id="new_result_2_ll"></p>
-            </div>
-            <br>
-            <!-- fase di modifica n 3 -->
-            <div>
-                <p id="lavorazione_3_ll"></p>
-                <input id="input_new_lavorazione_3_ll" type="number" placeholder="NEW % per FASE 3">
-                    <button type="button" onclick="setting_percentuali_3_fase()">Modifica</button> 
-                </input>
-                <p id="new_lavorazione_3_ll"></p>
-                <p id="new_result_3_ll"></p>
-            </div>
-            <br>
-            <!-- fase di modifica n 4 -->
-            <div>
-                <p id="lavorazione_4_ll"></p>
-                <input id="input_new_lavorazione_4_ll" type="number" placeholder="NEW % per FASE 4">
-                    <button type="button" onclick="setting_percentuali_4_fase()">Modifica</button> 
-                </input>
-                <p id="new_lavorazione_4_ll"></p>
-                <p id="new_result_4_ll"></p>
-            </div>
-            <br>
-            <!-- fase di modifica n 5 -->
-            <div>
-                <p id="lavorazione_5_ll"></p>
-                <input id="input_new_lavorazione_5_ll" type="number" placeholder="NEW % per FASE 5">
-                    <button type="button" onclick="setting_percentuali_5_fase()">Modifica</button> 
-                </input>
-                <p id="new_lavorazione_5_ll"></p>
-                <p id="new_result_5_ll"></p>
-            </div>
-            <br>
-            <!-- fase di modifica n 6 -->
-            <div>
-                <p id="lavorazione_6_ll"></p>
-                <input id="input_new_lavorazione_6_ll" type="number" placeholder="NEW % per FASE 6">
-                    <button type="button" onclick="setting_percentuali_6_fase()">Modifica</button> 
-                </input>
-                <p id="new_lavorazione_6_ll"></p>
-                <p id="new_result_6_ll"></p>
-            </div>
-            <br>
-            <!-- fase di modifica n 7 -->
-            <div>
-                <p id="lavorazione_7_ll"></p>
-                <input id="input_new_lavorazione_7_ll" type="number" placeholder="NEW % per FASE 7">
-                    <button type="button" onclick="setting_percentuali_7_fase()">Modifica</button> 
-                </input>
-                <p id="new_lavorazione_7_ll"></p>
-                <p id="new_result_7_ll"></p>
-            </div>  
+                    <p id="new_lavorazione_1_ll"></p>
+                    <p id="new_result_1_ll"></p>
         </div>
+        <br>
+        <!-- fase di modifica n 2 -->
+        <div>
+            <p id="lavorazione_2_ll"></p>
+            <input id="input_new_lavorazione_2_ll" type="number" placeholder="NEW % per FASE 2">
+                <button type="button" onclick="setting_percentuali_2_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_2_ll"></p>
+            <p id="new_result_2_ll"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 3 -->
+        <div>
+            <p id="lavorazione_3_ll"></p>
+            <input id="input_new_lavorazione_3_ll" type="number" placeholder="NEW % per FASE 3">
+                <button type="button" onclick="setting_percentuali_3_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_3_ll"></p>
+            <p id="new_result_3_ll"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 4 -->
+        <div>
+            <p id="lavorazione_4_ll"></p>
+            <input id="input_new_lavorazione_4_ll" type="number" placeholder="NEW % per FASE 4">
+                <button type="button" onclick="setting_percentuali_4_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_4_ll"></p>
+            <p id="new_result_4_ll"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 5 -->
+        <div>
+            <p id="lavorazione_5_ll"></p>
+            <input id="input_new_lavorazione_5_ll" type="number" placeholder="NEW % per FASE 5">
+                <button type="button" onclick="setting_percentuali_5_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_5_ll"></p>
+            <p id="new_result_5_ll"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 6 -->
+        <div>
+            <p id="lavorazione_6_ll"></p>
+            <input id="input_new_lavorazione_6_ll" type="number" placeholder="NEW % per FASE 6">
+                <button type="button" onclick="setting_percentuali_6_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_6_ll"></p>
+            <p id="new_result_6_ll"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 7 -->
+        <div>
+            <p id="lavorazione_7_ll"></p>
+            <input id="input_new_lavorazione_7_ll" type="number" placeholder="NEW % per FASE 7">
+                <button type="button" onclick="setting_percentuali_7_fase()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_7_ll"></p>
+            <p id="new_result_7_ll"></p>
+        </div>  
+    </div>
+    </div>
+      <!-- INZIO HTML LAVORAZIONE FERRO -->
+      <div id="Hours_Input_lf" class="container-fluid font initial_display" >
+        <h4 class="">Hai selezionato LAVORAZIONE FERRO</h4>
+        <form>
+            <div class="form-group">
+              <br>
+              <input id="input_num_Lf" type="number" placeholder="Inserire ore">
+            </div>
+        </form>
+            <div class="container-fluid">
+                <button type="button" class="btn btn-primary" onclick="lavorazione_ferro()">Calcola Ore</button>
+                <div>
+                    <p></p> <h6 id="result_1_lf"></h6> 
+                    <p></p> <h6 id="result_2_lf"></h6> 
+                    <p></p> <h6 id="result_3_lf"></h6> 
+                    <p></p> <h6 id="result_4_lf"></h6>
+                    <p></p> <h6 id="result_5_lf"></h6>
+                    <p></p> <h6 id="result_6_lf"></h6>
+                    <p></p> <h6 id="result_7_lf"></h6> 
+                </div>
+            </div>
+        <br>
+        <br>
+        
+<div class="container-fluid" >
+    <h4>Modificare le percentuali delle lavorazioni?</h4>
+    <button type="button" class="btn" onclick="show_default_values_lf()">Mostra Percentuali di default</button>    
+        <!-- fase di modifica n 1 -->
+        <div id="sh_s_v_lf initial_display">
+            <p id="lavorazione_1_lf"></p>
+                <input id="input_new_lavorazione_1_ll" type="number" placeholder="NEW % per FASE 1">
+                    <button type="button" onclick="setting_percentuali_1_fase_lf()">Modifica</button> 
+                </input>
+                    <p id="new_lavorazione_1_lf"></p>
+                    <p id="new_result_1_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 2 -->
+        <div>
+            <p id="lavorazione_2_lf"></p>
+            <input id="input_new_lavorazione_2_lf" type="number" placeholder="NEW % per FASE 2">
+                <button type="button" onclick="setting_percentuali_2_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_2_lf"></p>
+            <p id="new_result_2_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 3 -->
+        <div>
+            <p id="lavorazione_3_lf"></p>
+            <input id="input_new_lavorazione_3_lf" type="number" placeholder="NEW % per FASE 3">
+                <button type="button" onclick="setting_percentuali_3_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_3_lf"></p>
+            <p id="new_result_3_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 4 -->
+        <div>
+            <p id="lavorazione_4_lf"></p>
+            <input id="input_new_lavorazione_4_lf" type="number" placeholder="NEW % per FASE 4">
+                <button type="button" onclick="setting_percentuali_4_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_4_lf"></p>
+            <p id="new_result_4_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 5 -->
+        <div>
+            <p id="lavorazione_5_lf"></p>
+            <input id="input_new_lavorazione_5_lf" type="number" placeholder="NEW % per FASE 5">
+                <button type="button" onclick="setting_percentuali_5_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_5_lf"></p>
+            <p id="new_result_5_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 6 -->
+        <div>
+            <p id="lavorazione_6_fl"></p>
+            <input id="input_new_lavorazione_6_fl" type="number" placeholder="NEW % per FASE 6">
+                <button type="button" onclick="setting_percentuali_6_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_6_lf"></p>
+            <p id="new_result_6_lf"></p>
+        </div>
+        <br>
+        <!-- fase di modifica n 7 -->
+        <div>
+            <p id="lavorazione_7_lf"></p>
+            <input id="input_new_lavorazione_7_lf" type="number" placeholder="NEW % per FASE 7">
+                <button type="button" onclick="setting_percentuali_7_fase_lf()">Modifica</button> 
+            </input>
+            <p id="new_lavorazione_7_lf"></p>
+            <p id="new_result_7_lf"></p>
+        </div>  
+    </div>
+      </div>
     <div>
-        <a href="#" onclick="go();">FACCIO UN CASINO</a>            
+        <a href="#" onclick="go();">Genera Excel</a>            
     </div>
 </body>
 
