@@ -150,6 +150,19 @@ function setting_percentuali_7_fase(work_hours = parseFloat(document.getElementB
 */
 
 function go(){
+
+
+/* Variabili che mi servono per calcolare e stampare i dati che mi servono */ 
+/* PRIMI RISULTATI E WORK HOURS */
+work_hours = parseFloat(document.getElementById("input_num").value);
+var result_1_ll = (work_hours * lavorazione_1_ll) / 100;
+var result_2_ll = (work_hours * lavorazione_2_ll) / 100;    
+var result_3_ll = (work_hours * lavorazione_3_ll) / 100;    
+var result_4_ll = (work_hours * lavorazione_4_ll) / 100;
+var result_5_ll = (work_hours * lavorazione_5_ll) / 100;
+var result_6_ll = (work_hours * lavorazione_6_ll) / 100;    
+var result_7_ll = (work_hours * lavorazione_7_ll) / 100;  
+/* FINE PRIMI RISULTATI E WORK HOURS */
 /* Variabili per la nuova lavorazione ed il nuovo risultato */
 /* NUOVA LAVORAZIONE 1 */
 var new_lavorazione_1_ll = parseFloat(document.getElementById("input_new_lavorazione_1_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
@@ -179,18 +192,7 @@ var new_result_6_ll = (work_hours * new_lavorazione_6_ll) / 100; // creo una var
 var new_lavorazione_7_ll = parseFloat(document.getElementById("input_new_lavorazione_7_ll").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
 var new_result_7_ll = (work_hours * new_lavorazione_7_ll) / 100; // creo una variabile per il nuovo risultato
 /* FINE NUOVA LAVORAZIONE 7 */
-
-
-
-
-work_hours = parseFloat(document.getElementById("input_num").value);
-var result_1_ll = (work_hours * lavorazione_1_ll) / 100;
-var result_2_ll = (work_hours * lavorazione_2_ll) / 100;    
-var result_3_ll = (work_hours * lavorazione_3_ll) / 100;    
-var result_4_ll = (work_hours * lavorazione_4_ll) / 100;
-var result_5_ll = (work_hours * lavorazione_5_ll) / 100;
-var result_6_ll = (work_hours * lavorazione_6_ll) / 100;    
-var result_7_ll = (work_hours * lavorazione_7_ll) / 100;    
+  
 
 var excel = $JExcel.new("Verdana light 10 #333333");			// Default font
 
@@ -255,7 +257,7 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,1,8, lavorazione_6_ll + "%");
         excel.set(0,1,9, lavorazione_7_ll + "%");
 // fine stampa percentuali
-
+/*
 // adesso stampo i dati delle ore 
         excel.set(0,1,3, lavorazione_1_ll + "%");
         excel.set(0,1,4, lavorazione_2_ll + "%");
@@ -265,8 +267,8 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,1,8, lavorazione_6_ll + "%");
         excel.set(0,1,9, lavorazione_7_ll + "%");
 // fine stampa percentuali
-
-
+*/
+// stampa delle percentuali immesse dall'utente 
         excel.set(0,2,3, new_lavorazione_1_ll + " %"); // calcolo fuori dalla funzione
         excel.set(0,2,4, new_lavorazione_2_ll + " %");
         excel.set(0,2,5, new_lavorazione_3_ll + " %");
@@ -274,10 +276,7 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,2,7, new_lavorazione_5_ll + " %");
         excel.set(0,2,8, new_lavorazione_6_ll + " %");
         excel.set(0,2,9, new_lavorazione_7_ll + " %");
-
-
-
-
+// fine stampa percentuali immesse dall'utente
 
 // adesso stampo i dati delle ore previste per ogni fase in base all'input iniziale dell'utente 
         excel.set(0,3,3, result_1_ll + " ore"); // calcolo fuori dalla funzione
@@ -288,6 +287,22 @@ for (var i=1;i<8;i++){ // for che stampa le righe
         excel.set(0,3,8, result_6_ll + " ore");
         excel.set(0,3,9, result_7_ll + " ore");
 // fine stampa dati delle ore previste per ogni fase in base all'input iniziale dell'utente
+
+// stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente        
+        excel.set(0,4,3, new_result_1_ll + " ore"); // calcolo fuori dalla funzione
+        excel.set(0,4,4, new_result_2_ll + " ore");
+        excel.set(0,4,5, new_result_3_ll + " ore");
+        excel.set(0,4,6, new_result_4_ll + " ore");
+        excel.set(0,4,7, new_result_5_ll + " ore");
+        excel.set(0,4,8, new_result_6_ll + " ore");
+        excel.set(0,4,9, new_result_7_ll + " ore");
+// fine stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente
+
+
+
+
+
+
     }
 }
 excel.generate("Lavorazioni.xlsx");
