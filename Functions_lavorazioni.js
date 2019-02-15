@@ -155,7 +155,6 @@ var lavorazione_6_lf = 15;
 var lavorazione_7_lf = 5;
 /* FINE VARIABILI CONTENUTE IN lavorazione_ferro */
 
-
 /*
 FINE SEZIONE PER LE VARIABILI GLOBALI
 */
