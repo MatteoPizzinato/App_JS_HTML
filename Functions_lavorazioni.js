@@ -288,13 +288,13 @@ var work_hours_lp; // la variabile che uso per prendere in input le mie ore macc
 
 /* VARIBILI CONTENUTE IN lavorazioni_ferro */
 /* Variabili relative alle fasi di lavorazione della funzione lavorazion_ferro */
-var lavorazione_1_lp = 5;
-var lavorazione_2_lp = 7;
-var lavorazione_3_lp = 12;
-var lavorazione_4_lp = 27;
-var lavorazione_5_lp = 29;
-var lavorazione_6_lp = 15;
-var lavorazione_7_lp = 5;
+var lavorazione_1_lp = 15;
+var lavorazione_2_lp = 13;
+var lavorazione_3_lp = 22;
+var lavorazione_4_lp = 20;
+var lavorazione_5_lp = 10;
+var lavorazione_6_lp = 5;
+var lavorazione_7_lp = 15;
 /* FINE VARIABILI CONTENUTE IN lavorazione_ferro */
 
 
@@ -313,7 +313,7 @@ function show_hide_hours_input_lp() // funzione che permette la comparsa, clicca
     }   
 };
 // funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
-function lavorazione_ferro()
+function lavorazione_plastica()
 {
     work_hours_lp = parseFloat(document.getElementById("input_num_lp").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
 
@@ -510,7 +510,54 @@ function go(){
     var new_lavorazione_7_lf = parseFloat(document.getElementById("input_new_lavorazione_7_lf").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
     var new_result_7_lf = (work_hours_lf * new_lavorazione_7_lf) / 100; // creo una variabile per il nuovo risultato
     /* FINE NUOVA LAVORAZIONE 7 */
+       /**
+       * 
+       * 
+       *
+       * 
+       **/
+    /* INIZIO DATI PER LAVORAZIONE PLASTICA */
 
+    /* Variabili che mi servono per calcolare e stampare i dati che mi servono */ 
+    /* PRIMI RISULTATI E WORK HOURS PER LAVORAZIONE PLASTICA */
+    work_hours_lp = parseFloat(document.getElementById("input_num_lp").value);
+    var result_1_lp = (work_hours_lp * lavorazione_1_lp) / 100;
+    var result_2_lp = (work_hours_lp * lavorazione_2_lp) / 100;    
+    var result_3_lp = (work_hours_lp * lavorazione_3_lp) / 100;    
+    var result_4_lp = (work_hours_lp * lavorazione_4_lp) / 100;
+    var result_5_lp = (work_hours_lp * lavorazione_5_lp) / 100;
+    var result_6_lp = (work_hours_lp * lavorazione_6_lp) / 100;    
+    var result_7_lp = (work_hours_lp * lavorazione_7_lp) / 100;  
+    /* FINE PRIMI RISULTATI E WORK HOURS */
+    /* Variabili per la nuova lavorazione ed il nuovo risultato */
+    /* NUOVA LAVORAZIONE 1 */
+    var new_lavorazione_1_lp = parseFloat(document.getElementById("input_new_lavorazione_1_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_1_lp = (work_hours_lp * new_lavorazione_1_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 1 */
+    /* NUOVA LAVORAZIONE 2 */
+    var new_lavorazione_2_lp = parseFloat(document.getElementById("input_new_lavorazione_2_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_2_lp = (work_hours_lp * new_lavorazione_2_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 2 */
+    /* NUOVA LAVORAZIONE 3 */
+    var new_lavorazione_3_lp = parseFloat(document.getElementById("input_new_lavorazione_3_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_3_lp = (work_hours_lp * new_lavorazione_3_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 3 */
+    /* NUOVA LAVORAZIONE 4 */
+    var new_lavorazione_4_lp = parseFloat(document.getElementById("input_new_lavorazione_4_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_4_lp = (work_hours_lp * new_lavorazione_4_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 4 */
+    /* NUOVA LAVORAZIONE 5 */
+    var new_lavorazione_5_lp = parseFloat(document.getElementById("input_new_lavorazione_5_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_5_lp = (work_hours_lp * new_lavorazione_5_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 5 */
+    /* NUOVA LAVORAZIONE 6 */
+    var new_lavorazione_6_lp = parseFloat(document.getElementById("input_new_lavorazione_6_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_6_lp = (work_hours_lp * new_lavorazione_6_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 6 */
+    /* NUOVA LAVORAZIONE 7 */
+    var new_lavorazione_7_lp = parseFloat(document.getElementById("input_new_lavorazione_7_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_7_lp = (work_hours_lp * new_lavorazione_7_lp) / 100; // creo una variabile per il nuovo risultato
+    /* FINE NUOVA LAVORAZIONE 7 */
     
     var excel = $JExcel.new("Verdana light 10 #333333");			// Default font
 
@@ -541,10 +588,6 @@ function go(){
    /* INIZIO DATI LAVORAZIONE LENTI */
     for (var i=1;i<8;i++){ // for che stampa le righe
         for(var j = 0; j < 9; j ++){ // for che stampa le colonne
-            
-            /* Provo a stampare le date in sequenza  */
-
-            excel.set(0,5, date + 1);
 
             /* Fine stampa le date in sequenza */
 
@@ -601,7 +644,7 @@ function go(){
 
     // INIZIO DATI LAVORAZIONE FERRO
 
-    excel.set(0,0,10,"LAVORAZIONE FERRO");
+            excel.set(0,0,10,"LAVORAZIONE FERRO");
             excel.set(0,0,11, "fase 1");
             excel.set(0,0,12, "fase 2");
             excel.set(0,0,13, "fase 3");
@@ -652,6 +695,59 @@ function go(){
             excel.set(0,4,17, new_result_7_lf + " ore");
     // fine stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente
     
+
+        // INIZIO DATI LAVORAZIONE PLASTICA
+
+        excel.set(0,0,19,"LAVORAZIONE PLASTICA");
+        excel.set(0,0,20, "fase 1");
+        excel.set(0,0,21, "fase 2");
+        excel.set(0,0,22, "fase 3");
+        excel.set(0,0,23, "fase 4");
+        excel.set(0,0,24, "fase 5");
+        excel.set(0,0,25, "fase 6");
+        excel.set(0,0,26, "fase 7");
+    // fine della stampa delle lavorazioni nelle varie fasi
+        excel.set(0,0,27, "     ");
+
+    // adesso stampo le percentuali di default
+        excel.set(0,1,20, lavorazione_1_lp + "%");
+        excel.set(0,1,21, lavorazione_2_lp + "%");
+        excel.set(0,1,22, lavorazione_3_lp + "%");
+        excel.set(0,1,23, lavorazione_4_lp + "%");
+        excel.set(0,1,24, lavorazione_5_lp + "%");
+        excel.set(0,1,25, lavorazione_6_lp + "%");
+        excel.set(0,1,26, lavorazione_7_lp + "%");
+    // fine stampa percentuali
+
+    // stampa delle percentuali immesse dall'utente 
+        excel.set(0,2,20, new_lavorazione_1_lp + " %"); // calcolo fuori dalla funzione
+        excel.set(0,2,21, new_lavorazione_2_lp + " %");
+        excel.set(0,2,22, new_lavorazione_3_lp + " %");
+        excel.set(0,2,23, new_lavorazione_4_lp + " %");
+        excel.set(0,2,24, new_lavorazione_5_lp + " %");
+        excel.set(0,2,25, new_lavorazione_6_lp + " %");
+        excel.set(0,2,26, new_lavorazione_7_lp + " %");
+    // fine stampa percentuali immesse dall'utente
+
+    // adesso stampo i dati delle ore previste per ogni fase in base all'input iniziale dell'utente 
+        excel.set(0,3,20, result_1_lp + " ore"); // calcolo fuori dalla funzione
+        excel.set(0,3,21, result_2_lp + " ore");
+        excel.set(0,3,22, result_3_lp + " ore");
+        excel.set(0,3,23, result_4_lp + " ore");
+        excel.set(0,3,24, result_5_lp + " ore");
+        excel.set(0,3,25, result_6_lp + " ore");
+        excel.set(0,3,26, result_7_lp + " ore");
+    // fine stampa dati delle ore previste per ogni fase in base all'input iniziale dell'utente
+
+    // stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente        
+        excel.set(0,4,20, new_result_1_lp + " ore"); // calcolo fuori dalla funzione
+        excel.set(0,4,21, new_result_2_lp + " ore");
+        excel.set(0,4,22, new_result_3_lp + " ore");
+        excel.set(0,4,23, new_result_4_lp + " ore");
+        excel.set(0,4,24, new_result_5_lp + " ore");
+        excel.set(0,4,25, new_result_6_lp + " ore");
+        excel.set(0,4,26, new_result_7_lp + " ore");
+    // fine stampa dei nuovi risultati prodotti in base alle percentuali immesse dall'utente
     
         }
     }
