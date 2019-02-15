@@ -272,6 +272,149 @@ function setting_percentuali_7_fase_lf(work_hours_lf = parseFloat(document.getEl
     document.getElementById("new_result_7_lf").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_7_lf + " ore";
 };
 
+
+/*
+
+LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA
+LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA
+LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA LAVORAZIONE PLASTICA
+
+*/
+
+/*
+SEZIONE PER LE VARIABILI GLOBALI 
+*/
+var work_hours_lp; // la variabile che uso per prendere in input le mie ore macchina e salvarle 
+
+/* VARIBILI CONTENUTE IN lavorazioni_ferro */
+/* Variabili relative alle fasi di lavorazione della funzione lavorazion_ferro */
+var lavorazione_1_lp = 5;
+var lavorazione_2_lp = 7;
+var lavorazione_3_lp = 12;
+var lavorazione_4_lp = 27;
+var lavorazione_5_lp = 29;
+var lavorazione_6_lp = 15;
+var lavorazione_7_lp = 5;
+/* FINE VARIABILI CONTENUTE IN lavorazione_ferro */
+
+
+/*
+FINE SEZIONE PER LE VARIABILI GLOBALI
+*/
+
+// funzione che mostra o nasconde un div che permette di inserire i dati per il calcolo delle ore di una determinata lavorazione
+function show_hide_hours_input_lp() // funzione che permette la comparsa, cliccando un pulsante di far comparire la casella nella 
+{                                // quale inserire il numero relativo alle ore di lavorazione
+    var x = document.getElementById("Hours_Input_lp");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }   
+};
+// funzione che mi calcola le tempistiche in base alle percentuali dei passaggi per le lavorazioni lenti
+function lavorazione_ferro()
+{
+    work_hours_lp = parseFloat(document.getElementById("input_num_lp").value); // qui prende il mio input e viene parsato in una variabile di tipo INT
+
+    // adesso calcolo il risultato delle percentuali e le mostro direttamente all'utente 
+    // in JS le varibili non servono esattamente, nel senso che per visualizzare in questo caso il risultato non serve avere una variabile e 
+    // poi far visualizzare quella ma basta fare il calcolo direttamente nel processo di visualizzazione del risultato. I vantaggi è che 
+    // così ho dei programmi più "leggeri" perchè hanno meno variabili
+/*
+    MEGLIO USARE DELLE VARIBILI ALLOCATE IN MEMORIA, PERCHE' MI SERVIRANNO PER SETTARE LE PPERCENTUALI POI, QUINDI...
+*/
+    var result_1_lp = document.getElementById("result_1_lp").innerHTML = "Le ore relative alla prima fase sono: " + (work_hours_lp * lavorazione_1_lp) / 100 + " ore";    
+    var result_2_lp = document.getElementById("result_2_lp").innerHTML = "Le ore relative alla seconda fase sono: " + (work_hours_lp * lavorazione_2_lp) / 100 + " ore";
+    var result_3_lp = document.getElementById("result_3_lp").innerHTML = "Le ore relative alla terza fase sono: " + (work_hours_lp * lavorazione_3_lp) / 100 + " ore";
+    var result_4_lp = document.getElementById("result_4_lp").innerHTML = "Le ore relative alla quarta fase sono: " + (work_hours_lp * lavorazione_4_lp) / 100 + " ore";
+    var result_5_lp = document.getElementById("result_5_lp").innerHTML = "Le ore relative alla quinta fase sono: " + (work_hours_lp * lavorazione_5_lp) / 100 + " ore";
+    var result_6_lp = document.getElementById("result_6_lp").innerHTML = "Le ore relative alla sesta fase sono: " + (work_hours_lp * lavorazione_6_lp) / 100 + " ore";
+    var result_7_lp = document.getElementById("result_7_lp").innerHTML = "Le ore relative alla settima fase sono: " + (work_hours_lp * lavorazione_7_lp) / 100 + " ore";
+};
+
+/* funzione che mostra i valori di default delle lavorazioni */
+function show_setting_values_lp() // funzione che permette la comparsa, cliccando un pulsante di far comparire la casella nella 
+{                                // quale inserire il numero relativo alle ore di lavorazione
+    var x = document.getElementById("sh_s_v_lp");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }   
+};
+function show_default_values_lp()
+{
+    // visualizzo i dati standard relativi alle fasi della lavorazione
+    document.getElementById("lavorazione_1_lp").innerHTML = "La percentuale relativa alla prima fase e'  " + lavorazione_1_lp + "%";
+    document.getElementById("lavorazione_2_lp").innerHTML = "La percentuale relativa alla seconda fase e'  " + lavorazione_2_lp + "%";
+    document.getElementById("lavorazione_3_lp").innerHTML = "La percentuale relativa alla terza fase e'  " + lavorazione_3_lp + "%";
+    document.getElementById("lavorazione_4_lp").innerHTML = "La percentuale relativa alla quarta fase e'  " + lavorazione_4_lp + "%";
+    document.getElementById("lavorazione_5_lp").innerHTML = "La percentuale relativa alla quinta fase e'  " + lavorazione_5_lp + "%";
+    document.getElementById("lavorazione_6_lp").innerHTML = "La percentuale relativa alla sesta fase e'  " + lavorazione_6_lp + "%";
+    document.getElementById("lavorazione_7_lp").innerHTML = "La percentuale relativa alla settima fase e'  " + lavorazione_7_lp + "%";
+
+};
+// adesso setto le percentuali di ogni fase della lavorazione, avrò 7 funzioni in totale, una per ogni fase della lavorazione
+// prima fase
+function setting_percentuali_1_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num_lp").value))  /* gli passo quello che avevo scritto nella 
+                                                                                                                      casella di input ore all'inizio */
+{
+    var new_lavorazione_1_lp = parseFloat(document.getElementById("input_new_lavorazione_1_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_1_lp = (work_hours_lp * new_lavorazione_1_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_1_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_1_lp + "%";
+    document.getElementById("new_result_1_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_1_lp + " ore";
+};
+// seconda fase
+function setting_percentuali_2_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_2_lp = parseFloat(document.getElementById("input_new_lavorazione_2_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_2_lp = (work_hours_lp * new_lavorazione_2_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_2_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_2_lp + "%";
+    document.getElementById("new_result_2_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_2_lp + " ore";
+};
+// terza fase
+function setting_percentuali_3_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_3_lp = parseFloat(document.getElementById("input_new_lavorazione_3_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_3_lp = (work_hours_lp * new_lavorazione_3_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_3_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_3_lp + "%";
+    document.getElementById("new_result_3_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_3_lp + " ore";
+};
+// quarta fase
+function setting_percentuali_4_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_4_lp = parseFloat(document.getElementById("input_new_lavorazione_4_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_4_lp = (work_hours_lp * new_lavorazione_4_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_4_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_4_lp + "%";
+    document.getElementById("new_result_4_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_4_lp + " ore";
+};
+// quinta fase
+function setting_percentuali_5_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_5_lp = parseFloat(document.getElementById("input_new_lavorazione_5_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_5_lp = (work_hours_lp * new_lavorazione_5_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_5_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_5_lp + "%";
+    document.getElementById("new_result_5_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_5_lp + " ore";
+};
+// sesta fase
+function setting_percentuali_6_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_6_lp = parseFloat(document.getElementById("input_new_lavorazione_6_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_6_lp = (work_hours_lp * new_lavorazione_6_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_6_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_6_lp + "%";
+    document.getElementById("new_result_6_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_6_lp + " ore";
+};
+// settima fase
+function setting_percentuali_7_fase_lp(work_hours_lp = parseFloat(document.getElementById("input_num").value))
+{
+    var new_lavorazione_7_lp = parseFloat(document.getElementById("input_new_lavorazione_7_lp").value); // creo una varibaile per la nuova percentuale immessa dll'utente 
+    var new_result_7_lp = (work_hours_lp * new_lavorazione_7_lp) / 100; // creo una variabile per il nuovo risultato
+    document.getElementById("new_lavorazione_7_lp").innerHTML = "La nuova percentuale relativa alla prima fase e'  " + new_lavorazione_7_lp + "%";
+    document.getElementById("new_result_7_lp").innerHTML = "Le nuove ore relative alla prima fase sono: " + new_result_7_lp + " ore";
+};
+
+
 /*
     FUNZIONE PER FARE IL FOGLIO EXCEL
 */
